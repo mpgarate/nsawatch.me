@@ -8,16 +8,21 @@ module.exports.text = function(req, res) {
 
   var nextWord = getRandomWord();
 
-  var response = {};
-  response.paragraphs = [];
+  var response = [];
 
   if (responseType === "paragraphs") {
+
     for (var j = 0; j < responseAmount; j++) {
       var paragraph = "";
       for (var i = 0; i < 12; i++) {
         paragraph += getRandomSentence() + ". ";
       }
-      response.paragraphs.push(paragraph);
+      response.push(paragraph);
+    }
+  } else if (responseType === "sentences") {
+    response = [];
+    for (var j = 0; j < responseAmount; j++) {
+      response.push(getRandomSentence());
     }
   }
 
@@ -29,6 +34,8 @@ function getRandomSentence() {
 
   // capitalize first letter
   sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+
+
 
   for (var i = 0; i < 9; i++) {
     if (5 === i) {
