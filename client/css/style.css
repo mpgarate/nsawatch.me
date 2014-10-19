@@ -41,3 +41,7 @@ body {
 .hidden {
   display:none;
 }
+
+.well {
+  font-family: "Courier New", Courier, monospace;
+}

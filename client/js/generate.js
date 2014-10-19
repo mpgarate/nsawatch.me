@@ -2,21 +2,9 @@ $(document).ready(function() {
 
 	var $textArea = $(".text-area");
 
-	$.ajax({
-		type: "GET",
-		url: "api/paragraphs/2",
-		dataType: "text",
-		success: function(data) {
-			data = JSON.parse(data);
-
-			console.log(data.paragraphs);
-			displayFillerText(data.paragraphs);
-		}
-	});
-
-
 	$(".fill-text-area").click(function() {
-		$textArea.toggleClass("hidden");
+		updateFillerText();
+		$textArea.removeClass("hidden");
 	});
 
 	function displayFillerText(paragraphs) {
@@ -27,5 +15,17 @@ $(document).ready(function() {
 		}
 
 		$textArea.html(content);
+	}
+
+	function updateFillerText() {
+		$.ajax({
+			type: "GET",
+			url: "api/paragraphs/2",
+			dataType: "text",
+			success: function(data) {
+				data = JSON.parse(data);
+				displayFillerText(data);
+			}
+		});
 	}
 });

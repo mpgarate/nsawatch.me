@@ -11,7 +11,6 @@ module.exports.text = function(req, res) {
   var response = [];
 
   if (responseType === "paragraphs") {
-
     for (var j = 0; j < responseAmount; j++) {
       var paragraph = "";
       for (var i = 0; i < 12; i++) {
@@ -20,9 +19,12 @@ module.exports.text = function(req, res) {
       response.push(paragraph);
     }
   } else if (responseType === "sentences") {
-    response = [];
     for (var j = 0; j < responseAmount; j++) {
       response.push(getRandomSentence());
+    }
+  } else if (responseType === "words") {
+    for (var i = 0; i < responseAmount; i++) {
+      response.push(getRandomWord());
     }
   }
 

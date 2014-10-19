@@ -7,6 +7,11 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/client/index.html');
 });
 
+app.get('/api', function(req, res) {
+  res.sendFile(__dirname + '/client/api.html');
+});
+
+
 app.use('/js', express.static(__dirname + '/client/js'));
 app.use('/css', express.static(__dirname + '/client/css'));
 app.use('/img', express.static(__dirname + '/client/img'));
