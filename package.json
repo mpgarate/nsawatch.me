@@ -1,0 +1,16 @@
+{
+  "name": "nsawatch.me",
+  "version": "1.0.0",
+  "description": "generate eye-catching filler text",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mpgarate",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.9.7",
+    "grunt": "^0.4.5",
+    "request": "^2.45.0"
+  }
+}
