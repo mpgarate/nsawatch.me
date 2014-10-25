@@ -6,6 +6,11 @@ module.exports.text = function(req, res) {
   var responseType = urlParams[2];
   var responseAmount = urlParams[3];
 
+  if (Number(responseAmount) > 500){
+    res.send("Request amount too large. Be nice.");
+    return;
+  }
+
   var nextWord = getRandomWord();
 
   var response = [];
