@@ -11,7 +11,7 @@ $(document).ready(function() {
 		var content = "";
 
 		for (var i = 0; i < paragraphs.length; i++) {
-			content += "<p>" + paragraphs[i] + "</p>";
+			content += "<p>" + paragraphs[i] + "</p><hr>";
 		}
 
 		$textArea.html(content);
